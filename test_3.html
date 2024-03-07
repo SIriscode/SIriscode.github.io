@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kopēt kodu</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+    <style>
+      body {
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #d1d1fd;
+        margin: 0;
+      }
+  
+      #code-container {
+        width: 1120px;
+        height: 570px;
+        position: relative;
+        border: 1px solid #d1d1fd;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.113);
+        overflow: auto;
+      }
+  
+      .button {
+        position: absolute;
+        text-decoration: none;
+        top: 10px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #5bcd14;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+      }
+  
+      #html-btn {
+        top: 15px;
+        font-size: 18px;
+        left: 214px;
+      }
+  
+      #css-btn {
+        top: 15px;
+        font-size: 18px;
+        left: 290px;
+      }
+  
+      #back-btn{
+        top: 15px;
+        font-size: 18px;
+        left: 20px;
+      }
+  
+      #copy-code {
+        top: 15px;
+        font-size: 18px;
+        right: 20px;
+      }
+  
+      #code {
+        white-space: pre;
+        padding: 20px;
+        padding-top: 50px;
+      }
+
+  </style>
+</head>
+<body>
+
+  <div id="code-container">
+    <button id="back-btn" class="button"><a href="video_majaslapas_izstrade.html" style="color: #fff; text-decoration: none;">&NestedLessLess; Atgriezties atpakaļ</a></button>
+    <button id="html-btn" class="button" onclick="showCode('html')">HTML</button>
+    <button id="css-btn" class="button" onclick="showCode('css')">CSS</button>
+    <button id="copy-code" class="button" onclick="copyCode()">Kopēt kodu</button>
+    <div id="code"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      showCode('html');
+    });
+
+    function showCode(language) {
+      const codeContainer = document.getElementById('code');
+      if (language === 'html') {
+        codeContainer.innerHTML = `\n&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Tējas internetveikals&lt;/title>
+    &lt;link rel='stylesheet' href='style.css'>
+&lt;/head>
+&lt;body>
+
+&lt;div class="header">
+  &lt;div class="container">
+    &lt;div class="header-line">
+        &lt;div class="header-logo">
+            &lt;img src="img/tea_logo.png" alt="Logo" width="100" height="100">
+        &lt;/div>
+
+            &lt;div class="nav">
+                &lt;a class='nav-item' href="#">SĀKUMS&lt;/a>
+                &lt;a class='nav-item' href="#">KATALOGS&lt;/a>
+                &lt;a class='nav-item' href="#">RAŽOTĀJI&lt;/a>
+                &lt;a class='nav-item' href="#">PAR MUMS&lt;/a>
+            &lt;/div>
+
+            &lt;div class="cart">
+                &lt;a href="#">
+                    &lt;img class="cart-img" src="img/cart.png" alt="Iepirkuma grozs" width="25" height="25">
+                &lt;/a>
+            &lt;/div>
+
+            &lt;div class="phone">
+                &lt;div class="phone-holder">
+                    &lt;div class="phone-img">
+                        &lt;img src="img/telephone.png" alt="telefons" width="25" height="25">
+                    &lt;/div>
+                    &lt;div class="number">&lt;a class="num" href="#">+371 01235639&lt;/a>&lt;/div>
+                &lt;/div>
+
+                &lt;div class="phone-text">
+                    Sazinieties ar mums &lt;br>jautājumu gadījumā!
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class="btn">
+                &lt;a class="button" href="#">Veikt pasūtījumu&lt;/a>
+            &lt;/div>
+        &lt;/div>
+
+        &lt;div class='header-down'>
+            &lt;div class='header-title'>
+                Laipni lūdzam
+                &lt;div class='header-subtitle'>Mūsu veikaliņā!&lt;/div>
+                &lt;div class='header-suptitle'>Šeit ir atrodama augstākās kvalitātes tēja!&lt;/div>
+                &lt;div class='btn'>
+                    &lt;a href='#' class='button'>SKATĪT KATALOGU&lt;/a>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="tea-img">
+                &lt;img src="img/tea1.webp" alt="tēja" width="600" height="400">
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+
+&lt;div class='cards'>
+    &lt;div class='container'>
+        &lt;div class='cards-holder'>
+            &lt;div class='card'>
+                &lt;div class='card-image'>
+                    &lt;img class='card-img' src='img/love_tea.png' width="70" height="70">
+                &lt;/div>
+                &lt;div class='card-title'>
+                    Liepziedu tēja
+                &lt;/div>
+                &lt;div class='card-desc'>
+                    Liepziedu tēja satur daudz C vitamīna.
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class='card'>
+                &lt;div class='card-image'>
+                    &lt;img class='card-img' src='img/love_tea.png' width="70" height="70">
+                &lt;/div>
+                &lt;div class='card-title'>
+                    Kumelīšu tēja
+                &lt;/div>
+                &lt;div class='card-desc'>
+                    Ārstniecības kumelīti plaši izmanto ārstniecībā un skaistumkopšanā.
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class='card'>
+                &lt;div class='card-image'>
+                    &lt;img class='card-img' src='img/love_tea.png' width="70" height="70">
+                &lt;/div>
+                &lt;div class='card-title'>
+                   Raudenes tēja
+                &lt;/div>
+                &lt;div class='card-desc'>
+                    Raudene uzlabo aknu darbību un arī garastāvokli. 
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+
+&lt;div class='history'>
+    &lt;div class='container'>
+        &lt;div class='history-holder'>
+            &lt;div class='history-info'>
+                &lt;div class='history-title' style="color: #5bb309;">
+                    Mūsu stāsts
+                &lt;/div>
+
+                &lt;div class='history-desc'>
+                    Kādā ziemas vakarā Anna vēlējās radīt kaut ko īpašu. 
+                    Viņa apvienoja vecmammas radītās tēju receptes ar mūsdienu 
+                    digitālā laikmeta iespējām, un izdomāja, ka viņa varētu atvērt 
+                    internetveikalu.
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class='history-images'>
+                &lt;img class='images-1' src="img/1tea.jpg" alt="tēja" width="400" height="300">
+                &lt;img class='images-2' src="img/2tea.jpg" alt="tēja" width="350" height="250">
+                &lt;img class='images-3' src="img/3tea.jpg" alt="tēja" width="300" height="200">
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+
+&lt;/body>
+&lt;/html>`;
+      } else if (language === 'css') {
+        codeContainer.innerHTML = `\nbody {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    margin: 0px;
+}
+.header {
+    background-image: url("img/background_img.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-line{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.header-logo {
+    margin-left: 10px;
+}
+.nav-item {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 21px;
+    margin-right: 25px;
+    transition: color 0.3s linear;
+}
+.nav-item:hover{
+    color: #20c20a;
+}
+.cart {
+    position: relative;
+    border-right: 3px solid #000;
+    padding-right: 15px;
+    height: 65px;
+}
+.cart-img {
+    position: absolute;
+    top: 18px;
+    right: 35px;
+}
+.num {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 21px;
+    transition: color 0.3s linear;
+}
+.num:hover {
+    color: #20c20a;
+}
+.phone-text {
+    font-size: 21px;
+    font-weight: 400;
+    color: #000;
+}
+.phone-img {
+    padding-right: 10px;
+}
+.phone-holder {
+    display: flex;
+    align-items: center;
+}
+.button {
+    background-color: #79d925;
+    color: #000;
+    font-size: 21px;
+    text-decoration: none;
+    padding: 14px 18px;
+    font-weight: 700;
+    transition: background-color 0.2s linear;
+}
+.btn {
+    padding-right: 30px;
+}
+.button:hover {
+    background-color: #20c20a;
+}
+.header-down{
+    position: relative;
+    padding-left: 30px;
+}
+.header-title{
+    color: #5bb309;
+    font-size: 80px;
+    font-weight: 400;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    margin-top: 100px;
+    margin-bottom: 12px;
+    padding-left: 50px;
+}
+.header-suptitle{
+    color: #000;
+    font-size: 30px;
+}
+.tea-img{
+    padding-right: 30px;
+    padding-top: 60px;
+    padding-left:630px;
+}
+.cards-holder {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+}
+.card {
+    width: 349px;
+    box-shadow: 10px 10px 40px 20px #0000001A;
+    margin-right: 31px;
+    background-color: #fffdfa;
+    margin-top: 30px;
+    padding: 10px 5px;
+}
+.card-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 31px;
+}
+.card-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 26px;
+    font-weight: 400;
+}
+.card-desc {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #000;
+}
+.history {
+    margin-top: 166px;
+}
+.history-title {
+    font-size: 70px;
+    font-weight: 400;
+    width: 500px;
+    text-align: center;
+    margin-top: 21px;
+    padding-left: 30px;
+}
+.history-desc {
+    color: #000;
+    font-size: 30px;
+    width: 500px;
+    text-align: center;
+    padding-left: 30px;
+}
+.history-images {
+    position: relative;
+    margin-bottom: 30px;
+}
+.history-holder {
+    display: flex;
+}
+.images-1 {
+    position: absolute;
+    z-index: 0;
+    top: 54px;
+    left: 50px;
+    right: 30px;
+}
+.images-2 {
+    position: absolute;
+    z-index: 200;
+    top: -80px;
+    left: 390px;
+    right: 30px;
+}
+.images-3 {
+    position: absolute;
+    z-index: 90;
+    top: 250px;
+    left: 410px;
+    right: 30px;
+}`;
+      }
+    }
+
+    function copyCode() {
+      const codeContainer = document.getElementById('code');
+      const codeText = codeContainer.innerText;
+
+      const textarea = document.createElement('textarea');
+      textarea.value = codeText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      alert('Kods nokopēts starpliktuvē!');
+    }
+  </script>
+</body>
+</html>

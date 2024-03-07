@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Teksta formatēšana</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabulina {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tabulina td, #tabulina th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+th {
+	text-align: left;
+}
+#tabulina tr:nth-child(even){background-color: #eaeaff;}
+#tabulina tr:hover {background-color: #d5d4ff;}
+
+</style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a class="active" href="ievads_html.html">HTML</a></li>
+                    <li><a href="ievadscss.html">CSS</a></li>
+                    <li><a href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+  <p><big>&nbsp;&nbsp;HTML Pamācība&nbsp;</big></p>
+  <a href="ievads_html.html">Ievads</a>
+  <a href="ievads_html_2dala.html">Pamatkodu piemēri</a>
+  <a href="html_elementi.html">Elementi un atribūti</a>
+  <a href="html_stils.html">Stils</a>
+  <a href="html_teksta_formatesana.html" class="active">Teksta formatēšana</a>
+  <a href="html_citatu_elementi.html">Citātu elementi</a>
+  <a href="html_krasas.html">Krāsas</a>
+  <a href="html_ka_pievienot_css.html">Kā pievienot CSS</a>
+  <a href="html_komentāri.html">Komentāri</a>
+  <a href="html_favicon.html">Favicon</a>
+  <a href="html_lapas_nosaukums.html">Lapas nosaukums</a>
+  <a href="html_klases_atlasitaji.html">Klases</a>
+</div>
+
+<div class="main">
+  <h1>HTML teksta formatēšana</h1><br>
+  <p class="teksts">Formatēšanas elementi tika izstrādāti, lai parādītu īpašus teksta veidus.</p><br> 
+    <p class="linija"></p><br><br>
+
+    <h2>HTML teksta formatēšanas elementi:</h2><br>
+<p>     <span style="color:#70b831"><b>< b ></b></span> — treknraksts:<br>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Elements HTML <b>< b ></b> nosaka treknrakstu bez īpašas nozīmes.</p><br>
+
+  <span style="color:#70b831"><b>< strong ></b></span> — svarīgs teksts (treknraksts):<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< strong ></b> definē tekstu ar svarīgu nozīmi. Saturs tiek izcelts treknrakstā.</p><br>
+        
+        <span style="color:#70b831"><b>< i ></b></span> — teksts slīprakstā<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elementa <b>< i ></b> saturs parasti tiek rādīts slīprakstā. To bieži izmanto, lai norādītu tehnisku terminu, frāzi no citas valodas, domu, kuģa nosaukumu utt.</p><br>
+
+<span style="color:#70b831"><b>< em ></b></span> — izcelts teksts<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML <b>< em ></b> elements definē uzsvērto tekstu. Saturs parasti tiek rādīts slīprakstā. Padoms: ekrāna lasītājs izrunās vārdus ar uzsvaru, izmantojot verbālo uzsvaru.</p><br>
+
+        <span style="color:#70b831"><b>< mark ></b></span> — atzīmētais teksts<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< mark ></b> nosaka tekstu, kas jāatzīmē vai jāizceļ.</p><br>
+
+        <span style="color:#70b831"><b>< small ></b></span> — mazāks teksts<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< small ></b> nosaka mazāku tekstu.</p><br>
+
+        <span style="color:#70b831"><b>< del ></b></span> — dzēsts teksts<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< del ></b> definē tekstu, kas ir izdzēsts no dokumenta. Pārlūkprogrammas parasti pārsvītro svītru caur izdzēsto tekstu.</p><br>
+
+        <span style="color:#70b831"><b>< ins ></b></span> — ievietots teksts<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< ins ></b> definē tekstu, kas ir ievietots dokumentā. Pārlūkprogrammas parasti pasvītro ievietoto tekstu.</p><br>
+
+        <span style="color:#70b831"><b>< sub ></b></span> — apakšraksta teksts<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< sub ></b> nosaka apakšindeksa tekstu. Apakšraksta teksts parādās pusi rakstzīmes zem parastās rindas, un dažreiz tas tiek atveidots mazākā fontā. Apakšraksta tekstu var izmantot ķīmiskām formulām, piemēram, H<sub>2</sub>O.</p><br>
+
+        <span style="color:#70b831"><b>< sup ></b></span> — virsraksta teksts</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;HTML elements <b>< sup ></b> definē augšraksta tekstu. Virsraksta teksts parādās pusi rakstzīmes virs parastās rindas, un dažreiz tas tiek atveidots mazākā fontā. Virsraksta tekstu var izmantot matemātikā, piemēram, sin<sup>2</sup>.</p><br>
+
+
+<div class="example-container">
+  <h2>Piemērs</h2><br>
+  <div class="example-box">
+    <span style="color:blue;"> Teksta formatēšanas elementu piemēri </span><br>
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton1">Izmēģināt  &Gt;</button>
+</div><br><br>
+
+<p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage1() {
+    window.location.href = 'izmeginat_html_teksta_formatesana.html';
+  }
+
+  const tryItButton1 = document.getElementById('tryItButton1');
+  tryItButton1.addEventListener('click', goToTryItYourselfPage1);
+
+</script>
+</body>
+</html>

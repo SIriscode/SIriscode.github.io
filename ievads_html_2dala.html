@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pamata piemēri</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabulina {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tabulina td, #tabulina th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+th {
+	text-align: left;
+}
+#tabulina tr:nth-child(even){background-color: #eaeaff;}
+#tabulina tr:hover {background-color: #d5d4ff;}
+
+</style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a class="active" href="ievads_html.html">HTML</a></li>
+                    <li><a href="ievadscss.html">CSS</a></li>
+                    <li><a href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+  <p><big>&nbsp;&nbsp;HTML Pamācība&nbsp;</big></p>
+  <a href="ievads_html.html">Ievads</a>
+  <a href="ievads_html_2dala.html" class="active">Pamatkodu piemēri</a>
+  <a href="html_elementi.html">Elementi un atribūti</a>
+  <a href="html_stils.html">Stils</a>
+  <a href="html_teksta_formatesana.html">Teksta formatēšana</a>
+  <a href="html_citatu_elementi.html">Citātu elementi</a>
+  <a href="html_krasas.html">Krāsas</a>
+  <a href="html_ka_pievienot_css.html">Kā pievienot CSS</a>
+  <a href="html_komentāri.html">Komentāri</a>
+  <a href="html_favicon.html">Favicon</a>
+  <a href="html_lapas_nosaukums.html">Lapas nosaukums</a>
+  <a href="html_klases_atlasitaji.html">Klases</a>
+</div>
+
+<div class="main">
+  <h1>Pamata piemēri</h1><br>
+    <p class="linija"></p><br>
+
+    <h2>HTML Dokumenti</h2><br>
+
+<p>Visi HTML dokumenti sākas ar dokumenta tipa deklarāciju: <span style="color:#ff0000"><b>< !DOCTYPE html ></b></span>.</p><br>
+<p>Pats HTML dokuments sākas ar <span style="color:#ff0000"><b>< html ></b></span> un beidzas ar <span style="color:#ff0000"><b>< /html ></b></span>.</p><br>
+<p>HTML dokumenta redzamā daļa atrodas starp <span style="color:#ff0000"><b>< body ></b></span> un <span style="color:#ff0000"><b>< /body ></b></span>.</p>
+
+<br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+      <span style="color:brown">< !DOCTYPE html ></span><br>
+      <span style="color:brown">< html ></span><br>
+      <span style="color:red">< body ></span><br><br>
+        <span style="color:blue">< h1 ></span>Mans pirmais virsraksts.<span style="color:blue">< /h1 ></span><br>
+        <span style="color:blue">< p ></span>Mans pirmais teksts.<span style="color:blue">< /p ></span><br><br>
+        <span style="color:red">< /body ></span><br>
+        <span style="color:brown">< /html ></span><br>
+
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton1">Izmēģināt  &Gt;</button>
+  </div><br>
+
+  <h2>Tagu izskaidrojums:</h2><br>
+  <p>Elements < html > ir saknes elements, un tas nosaka visu HTML dokumentu.</p><br>
+  <p>Pēc tam elementā < html > ir elements < body >:</p><br>
+
+  <p class="linija"></p><br>
+  <h2>< !DOCTYPE > deklarācija</h2><br>
+
+<p>Deklarācija <span style="color: red;"><b>< !DOCTYPE ></b></span> norāda dokumenta veidu un palīdz pārlūkprogrammām pareizi attēlot tīmekļa lapas.</p><br>
+<p style="background-color: #95eb49; width:490px;">Tam ir jāparādās tikai vienu reizi lapas augšdaļā pirms HTML tagiem.</p><br>
+<p>Deklarācija <span style="color: red;"><b>< !DOCTYPE ></b></span> nav reģistrjutīga.</p><br>
+
+<div class="example-container" style="padding: 12px 2px 1px 2px;">
+  <div class="example-box">
+    <span style="color:brown;"> < !DOCTYPE html > </span>
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+</div>
+</div><br>
+
+<p class="linija"></p><br>
+  <h2>HTML virsraksti</h2><br>
+
+<p>HTML virsraksti tiek definēti ar tagiem <span style="color: red;"><b>< h1 ></b></span> līdz <span style="color: red;"><b>< h6 ></b></span>.</p><br>
+<p><span style="color: red;"><b>< h1 ></b></span> definē vissvarīgāko / vislielāko virsrakstu. <span style="color: red;"><b>< h6 ></b></span> definē vismazāk svarīgāko virsrakstu:</p><br>
+
+
+<div class="example-container">
+  <h2>Piemērs</h2><br>
+  <div class="example-box">
+    <span style="color:blue">< h1 ></span>Virsraksts 1<span style="color:blue">< /h1 ></span><br>
+    <span style="color:blue">< h2 ></span>Virsraksts 2<span style="color:blue">< /h2 ></span><br>
+    <span style="color:blue">< h3 ></span>Virsraksts 3<span style="color:blue">< /h3 ></span><br>
+    <span style="color:blue">< h4 ></span>Virsraksts 4<span style="color:blue">< /h4 ></span><br>
+    <span style="color:blue">< h5 ></span>Virsraksts 5<span style="color:blue">< /h5 ></span><br>
+    <span style="color:blue">< h6 ></span>Virsraksts 6<span style="color:blue">< /h6 ></span><br>   
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton2">Izmēģināt  &Gt;</button>
+</div><br>
+
+<p class="linija"></p><br>
+  <h2>HTML rindkopas</h2><br>
+
+<p>HTML rindkopas tiek definētas ar tagu <span style="color: red;"><b>< p ></b></span>:</p><br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+        <span style="color:blue">< p ></span>Šī ir pirmā rindkopa<span style="color:blue">< /p ></span><br>
+        <span style="color:blue">< p ></span>Šī ir cita rindkopa<span style="color:blue">< /p ></span><br>
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton3">Izmēģināt  &Gt;</button>
+  </div><br>
+
+  <p class="linija"></p><br>
+  <h2>HTML saites</h2><br>
+
+<p>HTML saites tiek definētas ar tagu <span style="color: red;"><b>< a ></b></span>:</p><br>
+
+  <div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+        <span style="color:blue">< a href="saite.com" ></a></span> Šī ir saite <span style="color:blue">< /a ></span><br>
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton4">Izmēģināt  &Gt;</button>
+  </div><br>
+
+  <p>Saites galamērķis ir norādīts atribūtā <span style="color: red;"><b>href</b></span>.</p><br>
+  <p>Atribūti tiek izmantoti, lai sniegtu papildus informāciju par HTML elementiem.</p><br>
+
+  <p class="linija"></p><br>
+  <h2>HTML attēli</h2><br>
+
+<p>HTML attēli tiek definēti ar tagu <span style="color: red;"><b>< img ></b></span>.</p><br>
+<p>Avota fails <span style="color: red;"><b>(src)</b></span>, alternatīvais teksts <span style="color: red;"><b>(alt)</b></span>, <span style="color: red;"><b>width</b></span> un <span style="color: red;"><b>height</b></span> tiek nodrošināti kā atribūti:</p><br>
+
+<div class="example-container">
+  <h2>Piemērs</h2><br>
+  <div class="example-box">
+    <span style="color:blue">< img src="img/zieds.jpg" alt="Zieds" width="250" height="160" ></span><br>
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton5">Izmēģināt  &Gt;</button>
+</div><br><br>
+
+<p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage1() {
+    window.location.href = 'izmeginat_ievads_html_2dala.html';
+  }
+
+  const tryItButton1 = document.getElementById('tryItButton1');
+  tryItButton1.addEventListener('click', goToTryItYourselfPage1);
+
+  function goToTryItYourselfPage2() {
+    window.location.href = 'izmeginat_ievads_html_2dala_2.html';
+  }
+
+  const tryItButton2 = document.getElementById('tryItButton2');
+  tryItButton2.addEventListener('click', goToTryItYourselfPage2);
+
+    function goToTryItYourselfPage3() {
+    window.location.href = 'izmeginat_ievads_html_2dala_3.html';
+  }
+
+  const tryItButton3 = document.getElementById('tryItButton3');
+  tryItButton3.addEventListener('click', goToTryItYourselfPage3);
+
+    function goToTryItYourselfPage4() {
+    window.location.href = 'izmeginat_ievads_html_2dala_4.html';
+  }
+
+  const tryItButton4 = document.getElementById('tryItButton4');
+  tryItButton4.addEventListener('click', goToTryItYourselfPage4);
+
+    function goToTryItYourselfPage5() {
+    window.location.href = 'izmeginat_ievads_html_2dala_5.html';
+  }
+
+  const tryItButton5 = document.getElementById('tryItButton5');
+  tryItButton5.addEventListener('click', goToTryItYourselfPage5);
+
+</script>
+</body>
+</html>

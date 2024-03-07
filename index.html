@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <title>Sākumlapa</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="style_index.css">
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        text-decoration: none;
+        font-size: 16px;
+    }
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .sidenav {
+          height: 100%;
+          width: 170px;
+          position: fixed;
+          z-index: 1;
+          top: 50px;
+          left: 0;
+          background-color: #dddcff;
+          overflow: auto;
+          padding-top: 10px;
+        }
+        
+        .sidenav a {
+          padding: 2px 2px 6px 12px;
+          font-size: 15px;
+          color: #000000;
+          display: block;
+        }
+        
+        .sidenav a:hover {
+          color: #544fee;
+        }
+    
+        .sidenav a.active{
+          background-color: #64bc17;
+          color: white;
+        }
+    
+        .atteli1{
+          margin-left: 80px;
+        }
+        
+        .main {
+          margin-left: 80px;
+          margin-right: 100px;
+          margin-top: 40px;
+          margin-bottom: 40px;
+          font-size: 17px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 10px;}
+          .sidenav a {font-size: 10px;}
+        }
+    
+        p.teksts {
+            color: rgb(33, 133, 0);
+        }
+    
+        p.linija {
+            border-style: none none solid none;
+            border-color:#dedede;
+            width:700px;
+        }
+    
+        .example-container {
+            flex: 1;
+            max-width: 800px;
+            border-radius: 4px;
+            padding: 20px;
+            border: 1px double #cdcdcd;
+            margin: 10px;
+            background-color: #dcdcdc;
+        }
+    
+    .example-box {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 15px;
+      margin-left: 2px;
+      margin-right: 2px;
+      padding-left: 10px;
+      background-color: white;
+    }
+    
+    .button {
+      background-color: #5bcd14;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 3px 1px;
+      cursor: pointer;
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #c7c2ff;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+    
+    nav ul li ul {
+        position: absolute;
+        left: 0;
+        width: 180px;
+        background: #001247;
+        display: none;
+    }
+    
+    nav ul li ul li {
+        width: 100%;
+        border: 1px solid rgba(0,0,0,.1);
+    }
+    
+    nav ul li ul li ul {
+        left: 180px;
+        top: 0;
+    }
+    
+    nav ul li:hover > ul {
+        display: initial;
+    }
+    
+      .navigacija a.active {
+        background-color: #64bc17;
+        color: white;
+      }
+    
+      .navigacija .icon {
+        display: none;
+      }
+      
+      @media screen and (max-width: 600px) {
+        .navigacija a:not(:first-child) {display: none;}
+        .navigacija a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      @media screen and (max-width: 600px) {
+        .navigacija.responsive {position: relative;}
+        .navigacija.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .navigacija.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+
+      .toast-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        min-width: 300px;
+        font-size: 16px;
+    }
+
+    .toast.visible {
+        display: block !important;
+    }
+
+    .toast.closed {
+        display: none;
+    }
+      </style>
+    </head>
+    <body>
+    
+        <header>
+    
+            <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+            <div class="navigacija" id="manaNavigacija">
+            <nav>
+                <ul>
+                    <li><a class="active" href="index.html">Sākumlapa</a></li>
+                    <li><a href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                        <ul>
+                            <li><a href="ievads_html.html">HTML</a></li>
+                            <li><a href="ievadscss.html">CSS</a></li>
+                            <li><a href="ievads_js.html">JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+                    <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                        <ul>
+                            <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                            <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                            <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="laimes_rats.html">Laimes rats</a></li>
+                    <li><a href="ebook.html">E-grāmata</a></li>
+                    <li><a href="par_autori.html">Par autori</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+
+<div style="padding-left:px"><br><br><br><br>
+</div>
+
+<div class="main">
+  <h1>Sākumlapa</h1><br>
+
+  <p><b>Šī tīmekļa vietne ir paredzēta ikvienam interesentam, kurš interesējas par programmēšanu un vēlas paplašināt vai uzlabot savas prasmes.</b></p>
+  <p>Programmēšana mūsdienās ir ne tikai aktuāla, bet arī ļoti nepieciešama prasme dažādās nozarēs un profesijās. <span style="color:#70b831"><b>Šī prasme ir kļuvusi par būtisku sastāvdaļu digitālajā laikmetā, piedāvājot plašas iespējas gan karjeras veidošanai, gan inovāciju veicināšanai.</b></span></p><br>
+  <p style="background-color: #95eb49; width:840px; font-size: 19px;"><b>Tāpēc tika izstrādāta tīmekļa vietne, kura palīdzēs apgūt programmēšanas pamatiem nepieciešamās prasmes:</b></p>
+
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<b><a style="color:#70b831;" href="index.html">Sākumlapa</a></b> nodrošinās Jums ātru un vieglu piekļuvi visiem resursiem, kas ir pieejami vietnē. Tas ļaus Jums ātri orientēties un atrast nepieciešamo informāciju.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<b><a style="color:#70b831;" href="top3.html">Sadaļa par tīmekļa vietņu izstrādes pamatiem</a></b> sniedz pamatinformāciju par HTML, CSS un JavaScript valodām. Šī informācija ir noderīga gan iesācējiem, kas vēlas uzzināt par šīm valodām, gan arī pieredzējušiem programmētājiem, kuri vēlas atsvaidzināt savas zināšanas.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Šajā mājaslapā Jūs varat atrast dažādus <b><a style="color:#70b831;" href="uzdevumi.html">uzdevumus par HTML, CSS, un JavaScript valodu</a></b>, tie palīdzēs pilnveidot prasmes un pārbaudīt zināšanas. Uzdevumi ir strukturēti pēc sarežģītības, sniedzot lietotājiem iespēju pakāpeniski attīstīt savas programmēšanas prasmes.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Šī vietne arī piedāvā <b><a style="color:#70b831;" href="video_majaslapas_izstrade.html">interaktīvas video apmācības</a></b>, kurās tiek skaidroti konkrēti programmēšanas valodu jautājumi un risinājumi. Tas Jums palīdzēs vizuāli saprast sarežģītus jautājumus un ātri apgūt jaunas prasmes.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Kā arī vietnē ir pieejams <b><a style="color:#70b831;" href="laimes_rats.html">laimes rats</a></b>, kurā Jūs varat piedalīties dažādās aktivitātēs. Tas sniedz izklaides pauzi starp mācību sesijām.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Mājaslapā ir pieejama <b><a style="color:#70b831;" href="E-book/ebook.html">e-grāmata</a></b>, kuru autore pati rakstīja ar savu rokrakstu un patstāvīgi apguva HTML, CSS un JavaScript valodas.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Kā arī Jūs varēsiet saņemt <b><a style="color:#70b831;">paziņojumus</a></b> tīmekļa vietnē par jaunumiem un interesanatiem faktiem par HTML, CSS, un JavaScript valodām. Tas nodrošinās aktuālu informāciju un uzturēs Jūsu interesi par jaunumiem programmēšanas jomā.</p>
+
+  <br>
+
+  <p style="background-color: #95eb49; width: 725px; font-size: 19px;"><b>Šeit ir daži motivējoši iemesli, kāpēc vērtīgi būtu apgūt programmēšanu un cik tā ir nozīmīga:</b></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Uzņēmumi visā pasaulē meklē programmētājus un cilvēkus ar programmēšanas prasmēm. <b>Digitālā transformācija ir palielinājusi pieprasījumu pēc cilvēkiem, kas spēj izstrādāt un uzturēt programmatūru.</b></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<b>Programmēšana ir galvenais elements jaunu tehnoloģiju izstrādē un inovācijās.</b> Spēja radīt jaunas lietojumprogrammas, tehnoloģiskas risinājumus un digitālos produktus ir kļuvusi par konkurences priekšrocību uzņēmējdarbībā.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<b>Programmēšana stimulē loģisko domāšanu un spēju risināt dažādas sarežģītas problēmas.</b> Šīs prasmes ir noderīgas ne tikai programmēšanas jomā, bet arī daudzās citās dzīves situācijās.</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<b>Programmēšana iegūst arvien lielāku nozīmi izglītības jomā.</b> Programmēšanas prasmes palīdzēs gan jaunajai, gan vecajai paaudzei pielāgoties digitālajai videi.</p>
+
+</div>
+  
+  <div class="container">
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+
+    function showToast(message, delay) {
+        setTimeout(function () {
+            if ($('.toast.visible').length === 0) {
+                var toast = `<div class="toast visible" data-autohide="false">
+                              <div class="toast-header">
+                                <strong class="mr-auto text-primary" style="color:red;">Paziņojums</strong>
+                                <small class="text-muted">Tikko</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" onclick="closeToast(this)">&times;</button>
+                              </div>
+                              <div class="toast-body">
+                                ${message}
+                              </div>
+                            </div>`;
+
+                $('#toastContainer').append(toast);
+                $('.toast').toast('show');
+            }
+        }, delay);
+    }
+
+    function closeToast(button) {
+        var toast = button.parentElement.parentElement;
+        toast.classList.remove('visible'); 
+        toast.classList.add('closed'); 
+        fadeOut(toast);
+    }
+
+    function fadeOut(element) {
+        var opacity = 1;
+        var fadeOutInterval = setInterval(function () {
+            if (opacity > 0) {
+                opacity -= 0.1;
+                element.style.opacity = opacity;
+            } else {
+                element.style.display = 'none';
+                clearInterval(fadeOutInterval);
+            }
+        }, 100);
+    }
+
+    $(document).ready(function () {
+        showToast('Pieejami jauni pašpārbaudes uzdevumi!', 3000);
+        showToast('Vai Tu zināji, ka pirmo tīmekļa lapu izveidoja Tims Berners-Lī 1991. gadā?', 6000);
+        showToast('Vai Tu zināji, ka sākotnēji JavaScript valoda tika saukta par “Mocha”, pēc tam tā tika pārdēvēta par “LiveScript”. JavaScript ir ietekmējušas tādas valodas kā C un Java. Tā kā tajā laikā tās bija diezgan populāras, tika nolemts “LiveScript” pārdēvēt par JavaScript?', 9000);
+        showToast('Laiks doties palasīt teoriju!', 12000);
+        showToast('Dodies nostiprināt zināšanas ar video apmācībām!', 15000);
+        showToast('Vai tu zināji, ka JavaScript nepieder nevienam uzņēmumam vai organizācijai?', 18000);
+    });
+</script>
+</body>
+</html>

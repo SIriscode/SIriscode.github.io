@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Koda redaktors</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d1d1fd;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.code-container, .output-container {
+  flex: 1;
+  max-width: 690px;
+  border-radius: 4px;
+  height: 410px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  background-color: white;
+}
+
+.code-container h2, .output-container h2 {
+  text-align: center;
+}
+
+#code {
+  width: 100%;
+  height: 240px;
+  border-radius: 4px;
+}
+
+#runButton {
+  display: block;
+  margin: 10px auto;
+}
+
+#outputFrame {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="code-container">
+      <h2 style="color:#45ab01;text-decoration: underline;">Koda redaktors</h2>
+      <button class="button" id="backButton5">&NestedLessLess; Atpakaļ uz vietni</button>
+
+      <textarea id="code">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+    color: navy;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+        
+<h1>Tas ir virsraksts.</h1>
+<p>Šī dokumenta stils ir ārējās stila lapas un iekšējā stila kombinācija.</p>
+        
+</body>
+</html>  
+</textarea>
+
+      <button id="runButton" class="button">Palaist kodu</button>
+    </div>
+    <div class="output-container">
+      <h2 style="color:#45ab01;text-decoration: underline;">Koda izvade</h2>
+      <iframe id="outputFrame"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const codeTextArea = document.getElementById('code');
+    const runButton = document.getElementById('runButton');
+    const outputFrame = document.getElementById('outputFrame');
+
+    function runCode() {
+      const code = codeTextArea.value;
+      outputFrame.contentDocument.open();
+      outputFrame.contentDocument.write(code);
+      outputFrame.contentDocument.close();
+    }
+
+    runButton.addEventListener('click', runCode);
+
+    runCode();
+
+    function goToTryItYourselfPage5() {
+    window.location.href = 'kapievienotcss.html';
+  }
+
+  const tryItButton5 = document.getElementById('backButton5');
+  tryItButton5.addEventListener('click', goToTryItYourselfPage5);
+</script>
+</body>
+</html>

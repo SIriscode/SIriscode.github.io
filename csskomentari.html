@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Komentāri</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a href="ievads_html.html">HTML</a></li>
+                    <li><a class="active" href="ievadscss.html">CSS</a></li>
+                    <li><a href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+  <p><big>&nbsp;&nbsp;CSS Pamācība&nbsp;</big></p>
+  <a href="ievadscss.html">Ievads</a>
+  <a href="csssintakse.html">Sintakse</a>
+  <a href="cssatlasitaji.html">Atlasītāji</a>
+  <a href="kapievienotcss.html">Kā pievienot CSS</a>
+  <a href="csskomentari.html" class="active">Komentāri</a>
+  <a href="csskrasas.html">Krāsas</a>
+  <a href="cssrgbkrasas.html">RGB Krāsas</a>
+  <a href="csshexkrasas.html">HEX Krāsas</a>
+  <a href="csshslkrasas.html">HSL Krāsas</a>
+  <a href="cssfonakrasas.html">Fona krāsas</a>
+  <a href="cssfonaattels.html">Fona attēli</a>
+  <a href="cssfonaattelaatkartosana.html">Fona attēlu atkārtošana</a>
+  <a href="cssfonapiestiprinajums.html">Fona piestiprinājums</a>
+  <a href="cssfonaisraksts.html">Fona īsraksts</a>
+  <a href="css_apmales.html">Apmales tekstam</a>
+  <a href="css_apmales_platums.html">Apmaļu platums</a>
+  <a href="css_apmales_krasa.html">Apmales krāsa</a>
+  <a href="css_apmalu_malas.html">Apmaļu malas</a>
+  <a href="css_apmales_israksts.html">Apmales īsraksta rekvizīts</a>
+  <a href="css_noapalotas_apmales.html">Noapaļotās apmales</a>
+  <a href="css_piemales.html">Piemales</a>
+</div>
+
+<div class="main">
+  <h1>CSS Komentāri</h1><br><br>
+    <p class="teksts">CSS komentāri netiek rādīti pārlūkprogrammā.</p><br> 
+
+    <p class="linija"></p><br>
+
+    <p>Komentāri tiek izmantoti, lai izskaidrotu kodu, un tie var palīdzēt arī vēlāk, kad tiks rediģēts kods.</p><br>
+    <p>Komentāri tiek ievietoti elementā <span style="color:#ff0000"><b>< style ></b> </span> un tie sākas ar <span style="color:#ff0000"><b>/*</b></span> un beidzas ar <span style="color:#ff0000"><b>*/</b></span>:</p><br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+    <span style="color:green">/* Tas ir vienas rindas komentārs */</span><br>
+      <span style="color:brown">p {</span><br>
+        <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;color:</span><span style="color:#0011d0"> red;</span><br>
+            <span style="color:brown">}</span><br>
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton">Izmēģināt  &Gt;</button>
+  </div>
+
+  <div class="example-container">
+    <h2>Piemērs</h2><br>
+    <p>Kodā var pievienot komentārus, kur vien vēlaties:</p><br>
+    <div class="example-box">
+      <span style="color:brown">p {</span><br>
+        <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:</span><span style="color:#0011d0"> red;</span><span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Iestata tekstu sarkanā krāsā */</span><br>
+        <span style="color:brown">}</span><br>
+        <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Piemērs</h2><br>
+    <p>Komentāri var ietvert arī vairākas rindiņas:</p><br>
+    <div class="example-box">
+        <span style="color:green">/* Komentāri var <br>
+            ietvert arī <br>
+            vairākas rindiņas */</span><br><br>
+      <span style="color:brown">p {</span><br>
+        <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:</span><span style="color:#0011d0"> red;</span><br>
+        <span style="color:brown">}</span><br>
+        <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+  </div><br><br>
+
+  <p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage() {
+    window.location.href = 'izmeginatcsskomentari.html';
+  }
+
+  const tryItButton = document.getElementById('tryItButton');
+  tryItButton.addEventListener('click', goToTryItYourselfPage);
+
+</script>
+</body>
+</html>

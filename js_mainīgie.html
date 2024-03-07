@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mainīgie</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabulina {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tabulina td, #tabulina th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+th {
+	text-align: left;
+}
+#tabulina tr:nth-child(even){background-color: #eaeaff;}
+#tabulina tr:hover {background-color: #d5d4ff;}
+
+</style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a href="ievads_html.html">HTML</a></li>
+                    <li><a href="ievadscss.html">CSS</a></li>
+                    <li><a class="active" href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+    <p><big>&nbsp;&nbsp;JS Pamācība&nbsp;</big></p>
+    <a href="ievads_js.html">Ievads</a>
+    <a href="js_ka_pievienot.html">Kā var pievienot JS</a>
+    <a href="js_izvade.html">Izvade</a>
+    <a href="js_pazinojumi.html">Paziņojumi</a>
+    <a href="js_sintakse.html">Sintakse</a>
+    <a href="js_komentāri.html">Komentāri</a>
+    <a href="js_mainīgie.html" class="active">Mainīgie</a>
+    <a href="js_let.html">Let</a>
+    <a href="js_const.html">Const</a>
+    <a href="js_operatori.html">Operatori</a>
+    <a href="js_datu_tipi.html">Datu tipi</a>
+    <a href="js_notikumi.html">Notikumi</a>
+
+  </div>
+
+<div class="main">
+  <h1>JavaScript Mainīgie</h1><br>
+    <p class="linija"></p><br>
+
+<p>Mainīgie ir datu glabāšanas konteineri. JavaScript mainīgos var deklarēt 4 veidos:</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Automātiski;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Izmantojot <span style="color:red"><b>var</b></span>;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Izmantojot <span style="color:red"><b>let</b></span>;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Izmantojot <span style="color:red"><b>const</b></span>.</p><br>
+
+
+<p class="linija"></p><br>
+
+<p>Šajā pirmajā piemērā x, y un z ir nedeklarēti mainīgie. Pirmoreiz lietojot, tie tiek automātiski deklarēti:</p><br>
+
+<div class="example-container">
+  <h2>Piemērs</h2><br>
+  <div class="example-box">
+      <span style="color:black">x = </span><span style="color:red">12;</span><br>
+      <span style="color:black">y = </span><span style="color:red">3;</span><br>
+      <span style="color:black">z = x + y;</span><br>
+
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton1">Izmēģināt  &Gt;</button>
+</div><br>
+
+<p style="background-color:#d3ffc3; width:683px; padding:10px; margin:10px;border-radius: 4px;"><b>Piezīme: </b>Tiek uzskatīts par labu programmēšanas praksi vienmēr deklarēt mainīgos pirms lietošanas.</p>
+<br>
+
+<div class="example-container">
+  <h2>Piemērs izmantojot 'var'</h2><br>
+  <div class="example-box">
+    <span style="color:blue">var </span><span style="color:black">x = </span><span style="color:red">12;</span><br>
+    <span style="color:blue">var </span><span style="color:black">y = </span><span style="color:red">3;</span><br>
+    <span style="color:blue">var </span><span style="color:black">z = x + y;</span><br>
+
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton2">Izmēģināt  &Gt;</button>
+</div><br>
+
+<div class="example-container">
+  <h2>Piemērs izmantojot 'let'</h2><br>
+  <div class="example-box">
+    <span style="color:blue">let </span><span style="color:black">x = </span><span style="color:red">12;</span><br>
+    <span style="color:blue">let </span><span style="color:black">y = </span><span style="color:red">3;</span><br>
+    <span style="color:blue">let </span><span style="color:black">z = x + y;</span><br>
+
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton3">Izmēģināt  &Gt;</button>
+</div><br>
+
+<div class="example-container">
+  <h2>Piemērs izmantojot 'const'</h2><br>
+  <div class="example-box">
+    <span style="color:blue">const </span><span style="color:black">x = </span><span style="color:red">12;</span><br>
+    <span style="color:blue">const </span><span style="color:black">y = </span><span style="color:red">3;</span><br>
+    <span style="color:blue">const </span><span style="color:black">z = x + y;</span><br>
+
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton4">Izmēģināt  &Gt;</button>
+</div><br>
+
+<div class="example-container">
+  <h2>Piemērs</h2><br>
+  <div class="example-box">
+    <span style="color:blue">const </span><span style="color:black">cena1 = </span><span style="color:red">12;</span><br>
+    <span style="color:blue">const </span><span style="color:black">cena2 = </span><span style="color:red">3;</span><br>
+    <span style="color:blue">let </span><span style="color:black">kopā = cena1 + cena2;</span><br>
+
+    <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+  </div>
+  <button class="button" id="tryItButton5">Izmēģināt  &Gt;</button>
+</div><br>
+
+<p>Divi mainīgie <b>cena1 un cena2</b> tiek deklarēti ar atslēgvārdu <span style="color:red"><b>const</b></span>. Tās ir nemainīgas vērtības, un tās nevar mainīt.</p><br>
+<p><b>Mainīgais kopējais</b> tiek deklarēts ar atslēgvārdu <span style="color:red"><b>let</b></span>. Kopējo vērtību var mainīt.</p><br>
+
+<p class="linija"></p><br>
+
+
+<h2 style="background-color: #95eb49; width:400px;">Kad lietot 'var', 'let' vai 'const'?</h2><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Vienmēr deklarējiet mainīgos.</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Vienmēr izmantojiet <span style="color:#70b831"><b> const </b></span>ja vērtību nevajadzēs mainīt.</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Izmantojiet<span style="color:#70b831"><b> let </b></span>tikai tad, ja nevarat lietot <b>const</b>.</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Izmantojiet<span style="color:#70b831"><b> var </b></span>ja jums OBLIGĀTI jāatbalsta vecās pārlūkprogrammas.</p><br>
+<br><br>
+
+<p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage1() {
+    window.location.href = 'izmeginat_js_mainigie1.html';
+  }
+
+  const tryItButton1 = document.getElementById('tryItButton1');
+  tryItButton1.addEventListener('click', goToTryItYourselfPage1);
+
+  function goToTryItYourselfPage2() {
+    window.location.href = 'izmeginat_js_mainigie2.html';
+  }
+
+  const tryItButton2 = document.getElementById('tryItButton2');
+  tryItButton2.addEventListener('click', goToTryItYourselfPage2);
+
+  function goToTryItYourselfPage3() {
+    window.location.href = 'izmeginat_js_mainigie3.html';
+  }
+
+  const tryItButton3 = document.getElementById('tryItButton3');
+  tryItButton3.addEventListener('click', goToTryItYourselfPage3);
+
+  function goToTryItYourselfPage4() {
+    window.location.href = 'izmeginat_js_mainigie4.html';
+  }
+
+  const tryItButton4 = document.getElementById('tryItButton4');
+  tryItButton4.addEventListener('click', goToTryItYourselfPage4);
+
+
+  function goToTryItYourselfPage5() {
+    window.location.href = 'izmeginat_js_mainigie5.html';
+  }
+
+  const tryItButton5 = document.getElementById('tryItButton5');
+  tryItButton5.addEventListener('click', goToTryItYourselfPage5);
+
+</script>
+</body>
+</html>

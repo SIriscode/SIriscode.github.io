@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kā pie HTML var pievienot JS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabulina {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tabulina td, #tabulina th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+th {
+	text-align: left;
+}
+#tabulina tr:nth-child(even){background-color: #eaeaff;}
+#tabulina tr:hover {background-color: #d5d4ff;}
+
+</style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a href="ievads_html.html">HTML</a></li>
+                    <li><a href="ievadscss.html">CSS</a></li>
+                    <li><a class="active" href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+  <p><big>&nbsp;&nbsp;JS Pamācība&nbsp;</big></p>
+  <a href="ievads_js.html">Ievads</a>
+  <a href="js_ka_pievienot.html" class="active">Kā var pievienot JS</a>
+  <a href="js_izvade.html">Izvade</a>
+  <a href="js_pazinojumi.html">Paziņojumi</a>
+  <a href="js_sintakse.html">Sintakse</a>
+  <a href="js_komentāri.html">Komentāri</a>
+  <a href="js_mainīgie.html">Mainīgie</a>
+  <a href="js_let.html">Let</a>
+  <a href="js_const.html">Const</a>
+  <a href="js_operatori.html">Operatori</a>
+  <a href="js_datu_tipi.html">Datu tipi</a>
+  <a href="js_notikumi.html">Notikumi</a>
+
+</div>
+
+<div class="main">
+  <h1>Kā pie HTML var pievienot JavaScript?</h1><br><br>
+
+  <h2>Tags < script ></h2><br>
+
+<p>HTML valodā JavaScript kods tiek ievietots starp tagiem < script > un < /script >.</p><br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+      <span style="color:brown">< script ></span><br>
+        <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById</span><span style="color:brown">("demo")</span><span style="color:blue">.innerHTML = </span><span style="color:brown">"Mans pirmais JavaScript";</span><br>
+        <span style="color:brown">< /script ></span><br>
+
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton1">Izmēģināt  &Gt;</button>
+  </div><br>
+
+  <p class="linija"></p><br>
+<h2>JavaScript funkcijas un notikumi</h2><br>
+
+<p>JavaScript <span style="color:red"><b>function</b></span> ir JavaScript koda bloks, ko var izpildīt, kad tas tiek "izsaukts".</p><br>
+
+<p>Piemēram, funkciju var izsaukt, kad notiek <span style="color:red"><b>notikums</b></span>, piemēram, kad lietotājs noklikšķina uz pogas.</p><br>
+
+<p class="linija"></p><br>
+<h2>JavaScript sadaļā < head > vai < body ></h2><br>
+<p>HTML dokumentā var ievietot neierobežotu skaitu skriptu.</p><br>
+<p>Skriptus var ievietot HTML lapas sadaļā <span style="color:red"><b>< body ></b></span> vai <span style="color:red"><b>< head ></b></span>, vai abos.</p><br>
+
+
+<p class="linija"></p><br>
+<h2>JavaScript sadaļā < head ></h2><br>
+<p>Šajā piemērā JavaScript <span style="color:red"><b>function</b></span> ir ievietota HTML lapas sadaļā <span style="color:red"><b>< head ></b></span>.</p><br>
+<p>Funkcija tiek izsaukta, kad tiek noklikšķināts uz pogas.</p><br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <div class="example-box">
+      <span style="color:brown">< head ></span><br>
+      <span style="color:red">< script ></span><br>
+      <span style="color:blue">function</span> <span style="color:black">myFunction() {</span><br>
+        <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById</span><span style="color:brown">("demo")</span><span style="color:blue">.innerHTML = </span><span style="color:brown">"Teksts izmainījās";</span><br>
+        <span style="color:black">}</span><br>
+        <span style="color:red">< /script ></span><br>
+        <span style="color:brown">< /head ></span><br>
+
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton2">Izmēģināt  &Gt;</button>
+  </div><br>
+
+  <p class="linija"></p><br>
+  <h2>JavaScript sadaļā < body ></h2><br>
+  <p>Šajā piemērā JavaScript <span style="color:red"><b>function</b></span> ir ievietota HTML lapas sadaļā <span style="color:red"><b>< body ></b></span>.</p><br>
+  <p>Funkcija tiek izsaukta, kad tiek noklikšķināts uz pogas.</p><br>
+  
+<p style="background-color:#d3ffc3; width:683px; padding:10px; margin:10px;border-radius: 4px;">Skriptu ievietošana elementa <b>< body ></b> apakšā uzlabo attēlošanas ātrumu, jo skripta interpretācija palēnina displeju.</p><br>
+
+  <div class="example-container">
+      <h2>Piemērs</h2><br>
+      <div class="example-box">
+        <span style="color:brown">< body ></span><br>
+        <span style="color:red">< script ></span><br>
+        <span style="color:blue">function</span> <span style="color:black">myFunction() {</span><br>
+          <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById</span><span style="color:brown">("demo")</span><span style="color:blue">.innerHTML = </span><span style="color:brown">"Teksts izmainījās";</span><br>
+          <span style="color:black">}</span><br>
+          <span style="color:red">< /script ></span><br>
+          <span style="color:brown">< /body ></span><br>
+  
+        <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+      <button class="button" id="tryItButton3">Izmēģināt  &Gt;</button>
+    </div><br>
+
+    <p class="linija"></p><br>
+    <h2>Ārējais JavaScript</h2><br>
+    <p>Ārējie skripti ir praktiski, ja viens un tas pats kods tiek izmantots vairākās tīmekļa lapās.</p><br>
+    <p>JavaScript failiem ir faila paplašinājums <span style="color:#70b831"><b>.js</b></span>.</p><br>
+    <p>Lai izmantotu ārēju skriptu, skripta faila nosaukumu ievietojiet <span style="color:red"><b>< script ></b></span> taga atribūtā <span style="color:red"><b>src (source)</b></span>.</p><br>
+    <p>Skripts darbosies tā, it kā tas atrastos tieši tur, kur atrodas tags <b>< script ></b>.</p><br>
+
+
+    <div class="example-container">
+        <h2>Piemērs</h2><br>
+        <div class="example-box">
+          <span style="color:brown">< script > </span>
+          <span style="color:red">src</span>
+            <span style="color:blue">="myScript.js"</span>
+            <span style="color:brown">></span>
+            <span style="color:brown">< /script ></span>    
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+        </div>
+        <button class="button" id="tryItButton4">Izmēģināt  &Gt;</button>
+      </div><br>
+<br>
+<h2>Ārējās JavaScript priekšrocības</h2><br>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Tas <span style="color:#70b831"><b>atdala</b></span> HTML un kodu;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Tas <span style="color:#70b831"><b>atvieglo</b></span> HTML un JavaScript lasīšanu un uzturēšanu;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Kešatmiņā saglabātie JavaScript faili <span style="color:#70b831"><b>var paātrināt lapu ielādi</b></span>;</p>
+<br>
+<h2>Ārējās atsauces</h2><br>
+
+<p  style="background-color: #95eb49; width:350px;">Uz ārējo skriptu var atsaukties 3 dažādos veidos:</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Ar pilnu URL (pilnu tīmekļa adresi);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Ar faila ceļu (piemēram, /js/);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;Bez jebkāda ceļa;</p>
+<br><br>
+
+<p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage1() {
+    window.location.href = 'izmeginat_js_ka_pievienot1.html';
+  }
+
+  const tryItButton1 = document.getElementById('tryItButton1');
+  tryItButton1.addEventListener('click', goToTryItYourselfPage1);
+
+  
+  function goToTryItYourselfPage2() {
+    window.location.href = 'izmeginat_js_ka_pievienot2.html';
+  }
+
+  const tryItButton2 = document.getElementById('tryItButton2');
+  tryItButton2.addEventListener('click', goToTryItYourselfPage2);
+
+
+    function goToTryItYourselfPage3() {
+    window.location.href = 'izmeginat_js_ka_pievienot3.html';
+  }
+
+  const tryItButton3 = document.getElementById('tryItButton3');
+  tryItButton3.addEventListener('click', goToTryItYourselfPage3);
+
+    function goToTryItYourselfPage4() {
+    window.location.href = 'izmeginat_js_ka_pievienot4.html';
+  }
+
+  const tryItButton4 = document.getElementById('tryItButton4');
+  tryItButton4.addEventListener('click', goToTryItYourselfPage4);
+
+</script>
+</body>
+</html>

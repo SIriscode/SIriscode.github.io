@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kā CSS var pievienot pie HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabulina {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tabulina td, #tabulina th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+th {
+	text-align: left;
+}
+#tabulina tr:nth-child(even){background-color: #eaeaff;}
+#tabulina tr:hover {background-color: #d5d4ff;}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a class="active" href="ievads_html.html">HTML</a></li>
+                    <li><a href="ievadscss.html">CSS</a></li>
+                    <li><a href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+    <p><big>&nbsp;&nbsp;HTML Pamācība&nbsp;</big></p>
+    <a href="ievads_html.html">Ievads</a>
+    <a href="ievads_html_2dala.html">Pamatkodu piemēri</a>
+    <a href="html_elementi.html">Elementi un atribūti</a>
+    <a href="html_stils.html">Stils</a>
+    <a href="html_teksta_formatesana.html">Teksta formatēšana</a>
+    <a href="html_citatu_elementi.html">Citātu elementi</a>
+    <a href="html_krasas.html">Krāsas</a>
+    <a href="html_ka_pievienot_css.html" class="active">Kā pievienot CSS</a>
+    <a href="html_komentāri.html">Komentāri</a>
+    <a href="html_favicon.html">Favicon</a>
+    <a href="html_lapas_nosaukums.html">Lapas nosaukums</a>
+    <a href="html_klases_atlasitaji.html">Klases</a>
+</div>
+
+<div class="main">
+  <h1>Kā CSS var pievienot pie HTML</h1><br><br>
+    <p class="teksts">HTML dokuments tiks formatēts atbilstoši stila lapā esošajai informācijai, kad pārlūkprogramma nolasīs no tā informāciju.</p><br> 
+    <p class="linija"></p><br>
+
+    <h2>Kas ir CSS?</h2><br>
+    <p>Cascading Style Sheets (CSS) tiek izmantots, lai formatētu tīmekļa lapas izkārtojumu.<br><br> Izmantojot CSS, var kontrolēt krāsu, fontu, teksta lielumu, atstarpi starp elementiem, elementu izvietojumu un izkārtojumu, izmantojamos fona attēlus vai fona krāsas, dažādus displejus dažādām ierīcēm un ekrāna izmēriem un vēl daudz ko citu!</p><br>
+
+    <p class="linija"></p><br>
+
+    <p style="background-color: #95eb49; width:460px;">Lai sasaistītu CSS ar HTML var izmantot kādu no šiem veidiem:</p><br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>Inline</b></span> - izmanto <b>style</b> atribūtu HTML elementā;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>Internal</b></span> - izmantojot <b>< style ></b> elementu HTML faila sadaļā <b>< head ></b>;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>External</b></span> - HTML dokumentu sasaistot, izmantojot elementu <b>< link ></b>, ar ārēju CSS failu.</p><br>
+
+<p class="linija"></p><br>
+
+<h2>Inline (Iekļautais stils) CSS</h2><br>
+  <p>Iekļauto stilu var izmantot, lai vienam elementam piemērotu unikālu stilu.</p><br>
+  <p>Lai izmantotu iekļauto stilu, pievienojiet stila atribūtu attiecīgajam elementam. Stila atribūts var saturēt jebkuru CSS rekvizītu.</p><br>
+  
+  <div class="example-container">
+      <h2>1. Piemērs</h2><br>
+      <p>Iekļautie stili tiek definēti attiecīgā elementa atribūtā "style". Tas tiek izmantots, lai lietotu CSS vienā rindā vai elementā:</p><br>
+      <div class="example-box">
+        <span style="color:brown">< h1</span>
+          <span style="color:#ff0000">&nbsp;style</span><span style="color:#0011d0">="color:green; text-align:center;"</span>
+              <span style="color:brown">></span> Šis ir virsraksts. <span style="color:brown">< /h1 ></span><br>
+
+        <span style="color:brown">< p</span>
+          <span style="color:#ff0000">&nbsp;style</span><span style="color:#0011d0">="color:red;"</span>
+          <span style="color:brown">></span> Šis ir teksts. <span style="color:brown">< /p ></span><br>
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+      <button class="button" id="tryItButton1">Izmēģināt  &Gt;</button>
+    </div><br><br>
+
+<h2>Internal (Iekšējais stils) CSS</h2><br> 
+
+<div class="example-container">
+    <h2>2. Piemērs</h2><br>
+    <div class="example-box">
+      <span style="color:brown">body {</span><br>
+        <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;background-color:</span><span style="color:#0011d0">&nbsp;#89fbff;</span><br>
+        <span style="color:brown">}</span><br><br>
+
+        <span style="color:brown">h1 {</span><br>
+          <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;background-color:</span><span style="color:#0011d0">&nbsp;#00807e;</span><br>
+          <span style="color:brown">}</span><br>
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton2">Izmēģināt  &Gt;</button>
+  </div><br><br>
+
+
+<h2>External (Ārējais) CSS</h2><br>
+<p>Izmantojot ārējo stila lapu, var mainīt visas vietnes izskatu, mainot tikai vienu failu!</p><br>
+<p>Ārējie stili ir definēti elementā <span style="color:red"><b>< link ></b></span>, HTML lapas sadaļā <span style="color:red"><b>< head ></b></span>:</p><br>
+
+<div class="example-container">
+    <h2>3. Piemērs</h2><br>
+    <p>Ārējo stila lapu var uzrakstīt jebkurā teksta redaktorā, un tas ir jāsaglabā ar .css paplašinājumu.<p><br>
+    <p>Ārējā .css failā nedrīkst būt HTML tagi.</p><br>
+    <div class="example-box">
+      <span style="color:brown">< link</span>
+        <span style="color:#ff0000">&nbsp;rel</span><span style="color:#0011d0">="stylesheet"</span>
+        <span style="color:#ff0000">&nbsp;href</span><span style="color:#0011d0">="mystyle.css"</span>
+            <span style="color:brown">></span><br>
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton3">Izmēģināt  &Gt;</button>
+  </div>
+
+  <p style="background-color:#d3ffc3; width:683px; padding:20px; margin:10px;border-radius: 4px;"><b>Piezīme:</b>&nbsp; Nedrīkst pievienot atstarpi starp rekvizīta vērtību (20) un vienību (px):<br>
+    Nepareizi (atstarpe): <span style="color:#ff0000"><b>margin-left: 20 px;</b></span><br>
+    Pareizi (bez atstarpes): <span style="color:#ff0000"><b>margin-left: 20px;</b></span></p>
+
+<br><br>
+
+    <h2>Dažādas stila lapas</h2><br>
+    <p>Ja vienam un tam pašam atlasītājam elementam ir definēti daži rekvizīti dažādās stilu lapās, tiks izmantota vērtība no pēdējās lasītās stila lapas.</p><br> 
+
+  <div class="example-container">
+      <p>Pieņemsim, ka <b>ārējai stila lapai</b> ir šāds < h1 > elementa stils:</p><br>
+      <div class="example-box">
+        <span style="color:brown">h1 {</span><br>
+          <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:</span><span style="color:#0011d0"> navy;</span><br>
+          <span style="color:brown">}</span><br>
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+    </div>
+
+    <div class="example-container">
+      <p>Pēc tam pieņemsim, ka <b>iekšējai stila lapai</b> elementam < h1 > ir arī šāds stils: </p><br>
+      <div class="example-box">
+        <span style="color:brown">h1 {</span><br>
+          <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:</span><span style="color:#0011d0"> orange;</span><br>
+          <span style="color:brown">}</span><br>
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Piemērs</h2><br>
+      <p>Ja iekšējais stils ir definēts <b>pēc</b> saites uz ārējo stilu lapu, elementi < h1 > būs oranži:</p><br>
+      <div class="example-box">
+        <span style="color:brown">< head ><br> < link</span>
+          <span style="color:#ff0000">&nbsp;rel</span><span style="color:#0011d0">="stylesheet"</span><span style="color:#ff0000">&nbsp; type</span><span style="color:#0011d0">="text/css"</span> <span style="color:#ff0000">&nbsp;href</span><span style="color:#0011d0">="mystyle.css"</span>
+              <span style="color:brown">><br>< style ><br> h1 {<br></span>
+                <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: </span><span style="color:#0011d0">orange;</span><br>
+                <span style="color:brown">}<br>< /style ><br> < /head ><br></span>
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+      <button class="button" id="tryItButton4">Izmēģināt  &Gt;</button>
+    </div>
+
+    <div class="example-container">
+      <h2>Piemērs</h2><br>
+      <p>Tomēr, ja iekšējais stils ir definēts <b>pirms</b> saites uz ārējo stilu lapu, elementi < h1 > būs tumši zili:</p><br>
+      <div class="example-box">
+        <span style="color:brown">< head ><br></span>
+              <span style="color:brown">< style ><br> h1 {<br></span>
+                <span style="color:#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: </span><span style="color:#0011d0">orange;</span><br>
+                <span style="color:brown">}<br>< /style ><br>
+                  <span style="color:#ff0000"><span style="color:brown"> < link</span> &nbsp;rel</span><span style="color:#0011d0">="stylesheet"</span><span style="color:#ff0000">&nbsp; type</span><span style="color:#0011d0">="text/css"</span> <span style="color:#ff0000">&nbsp;href</span><span style="color:#0011d0">="mystyle.css"</span>
+                  ><br> < /head ><br></span>
+          <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+      </div>
+      <button class="button" id="tryItButton5">Izmēģināt  &Gt;</button>
+    </div>
+
+<br><br><br>
+
+    <h2>Kaskadēšanas secība</h2><br>
+    <p>Kāds stils tiks izmantots pirmais, ja HTML elementam ir norādīti vairāki stili?</p><br> 
+    <p style="background-color: #95eb49; width:265px;">Visi lapas stili tiks rādīti šādā secībā:</p><br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <span style="color:#70b831"><b>Inline</b></span> stils (HTML elementa iekšpusē);</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <span style="color:#70b831"><b>External</b></span> un <span style="color:#70b831"><b>Internal</b></span> stila lapas (head sadaļā);</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <span style="color:#70b831"><b>Pēc pārlūkprogrammas noklusējuma.</b></span></p><br>
+
+    <p>Tātad <b>inline stilam</b> ir visaugstākā prioritāte, un tas ignorēs <b>external</b> un <b>internal stilus</b>, un <b>pārlūkprogrammas noklusējuma iestatījumus</b>.</p>
+    <br><br>
+
+    <p class="linija"></p><br>
+    
+    <p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+      Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+      MDN Web Docs (https://developer.mozilla.org),<br>
+      Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+      HTML.com (https://html.com),<br>
+      Codecademy (https://www.codecademy.com),<br>
+      web.dev (https://web.dev),<br>
+      Tutorialspoint (https://www.tutorialspoint.com),<br>
+      W3Schools.com (https://www.w3schools.com),<br>
+      GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+      Programiz (https://www.programiz.com),<br>
+      W3C (https://www.w3.org),<br>
+      CSS-Tricks (https://css-tricks.com),<br>
+      Javatpoint (https://www.javatpoint.com),
+      un tā tālāk.</p><br>
+    
+      <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+    
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage1() {
+  window.location.href = 'izmeginat_html_ka_pievienot_css1.html';
+  }
+
+  const tryItButton1 = document.getElementById('tryItButton1');
+  tryItButton1.addEventListener('click', goToTryItYourselfPage1);
+
+  function goToTryItYourselfPage2() {
+    window.location.href = 'izmeginat_html_ka_pievienot_css2.html';
+  }
+
+  const tryItButton2 = document.getElementById('tryItButton2');
+  tryItButton2.addEventListener('click', goToTryItYourselfPage2);
+
+  function goToTryItYourselfPage3() {
+    window.location.href = 'izmeginat_html_ka_pievienot_css3.html';
+  }
+
+  const tryItButton3 = document.getElementById('tryItButton3');
+  tryItButton3.addEventListener('click', goToTryItYourselfPage3); 
+
+  function goToTryItYourselfPage4() {
+    window.location.href = 'izmeginat_html_ka_pievienot_css4.html';
+  }
+
+  const tryItButton4 = document.getElementById('tryItButton4');
+  tryItButton4.addEventListener('click', goToTryItYourselfPage4);
+
+  function goToTryItYourselfPage5() {
+    window.location.href = 'izmeginat_html_ka_pievienot_css5.html';
+  }
+
+  const tryItButton5 = document.getElementById('tryItButton5');
+  tryItButton5.addEventListener('click', goToTryItYourselfPage5);
+
+</script>
+</body>
+</html>

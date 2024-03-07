@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Apmales tekstam</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon_iris.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+ 
+ body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #001247;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4%;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        font-weight: 900;
+        color: #C7C2FF;
+        transition: .5s;
+    }
+    
+    header .logo:hover {
+        transform: scale(1.2);
+    }
+    
+    header nav ul li {
+        position: relative;
+        float: left;
+    }
+    
+    header nav ul li a {
+        padding: 15px;
+        color: #C7C2FF;
+        font-size: 16px;
+        display: block;
+    }
+    
+    header nav ul li a:hover {
+        background: #5c51e9;
+        color: #fff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 170px;
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      left: 0;
+      background-color: #dddcff;
+      overflow: auto;
+      padding-top: 10px;
+    }
+    
+    .sidenav a {
+      padding: 2px 2px 6px 12px;
+      font-size: 15px;
+      color: #000000;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #544fee;
+    }
+
+    .sidenav a.active{
+      background-color: #64bc17;
+      color: white;
+    }
+    
+    .main {
+      margin-left: 200px;
+      margin-right: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 10px;}
+      .sidenav a {font-size: 10px;}
+    }
+
+    p.teksts {
+        color: rgb(33, 133, 0);
+    }
+
+    p.linija {
+        border-style: none none solid none;
+        border-color:#dedede;
+        width:700px;
+    }
+
+.example-container {
+  flex: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px double #cdcdcd;
+  margin: 10px;
+  background-color: #ebebff;
+}
+
+.example-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #5bcd14;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p.viens {
+  border-style: solid;
+  padding: 12px;
+  border-width: 2px;
+}
+
+p.divi {
+  border-style: none none solid none;
+  padding: 12px;
+  border-width: 3px;
+  border-color: #0788f2;
+}
+
+p.tris {
+  border-style: none none none solid;
+  border-width: 9px;
+  border-color: #5bcd14;
+  padding: 12px;
+  background-color: #d6f2c4;
+}
+
+p.cetri {
+  border-style: solid;
+  padding: 12px;
+  border-width: 3px;
+  border-radius: 14px;
+  border-color: #ff7b00;
+}
+</style>
+</head>
+<body>
+
+  <header>
+    
+    <a href="index.html" class="logo"><img src="img/Iriscode_logo.jpg" heigth="100" width="130"></img></a>
+    <div class="navigacija" id="manaNavigacija">
+    <nav>
+        <ul>
+            <li><a href="index.html">Sākumlapa</a></li>
+            <li><a class="active" href="top3.html">Web izstrādes pamati &blacktriangledown;</a>
+                <ul>
+                    <li><a href="ievads_html.html">HTML</a></li>
+                    <li><a class="active" href="ievadscss.html">CSS</a></li>
+                    <li><a href="ievads_js.html">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="video_majaslapas_izstrade.html">Video apmācības</a></li>
+            <li><a href="uzdevumi.html">Uzdevumi &blacktriangledown;</a>
+                <ul>
+                    <li><a href="html_uzdevumi.html">HTML uzdevumi</a></li>
+                    <li><a href="css_uzdevumi.html">CSS uzdevumi</a></li>
+                    <li><a href="js_uzdevumi.html">JavaScript uzdevumi</a></li>
+                </ul>
+            </li>
+            <li><a href="laimes_rats.html">Laimes rats</a></li>
+            <li><a href="ebook.html">E-grāmata</a></li>
+            <li><a href="par_autori.html">Par autori</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+
+<div style="padding-left:30px"><br><br><br><br>
+</div>
+
+<div class="sidenav">
+  <p><big>&nbsp;&nbsp;CSS Pamācība&nbsp;</big></p>
+  <a href="ievadscss.html">Ievads</a>
+  <a href="csssintakse.html">Sintakse</a>
+  <a href="cssatlasitaji.html">Atlasītāji</a>
+  <a href="kapievienotcss.html">Kā pievienot CSS</a>
+  <a href="csskomentari.html">Komentāri</a>
+  <a href="csskrasas.html">Krāsas</a>
+  <a href="cssrgbkrasas.html">RGB Krāsas</a>
+  <a href="csshexkrasas.html">HEX Krāsas</a>
+  <a href="csshslkrasas.html">HSL Krāsas</a>
+  <a href="cssfonakrasas.html">Fona krāsas</a>
+  <a href="cssfonaattels.html">Fona attēli</a>
+  <a href="cssfonaattelaatkartosana.html">Fona attēlu atkārtošana</a>
+  <a href="cssfonapiestiprinajums.html">Fona piestiprinājums</a>
+  <a href="cssfonaisraksts.html">Fona īsraksts</a>
+  <a href="css_apmales.html" class="active">Apmales tekstam</a>
+  <a href="css_apmales_platums.html">Apmaļu platums</a>
+  <a href="css_apmales_krasa.html">Apmales krāsa</a>
+  <a href="css_apmalu_malas.html">Apmaļu malas</a>
+  <a href="css_apmales_israksts.html">Apmales īsraksta rekvizīts</a>
+  <a href="css_noapalotas_apmales.html">Noapaļotās apmales</a>
+  <a href="css_piemales.html">Piemales</a>
+</div>
+
+<div class="main">
+  <h1>CSS apmales tekstam</h1><br><br>
+    <p class="teksts">CSS <b>border</b> rekvizīts ļauj norādīt elementa apmales stilu, platumu un krāsu.</p><br> 
+
+    <p class="linija"></p><br>
+
+    <p class="viens">Man ir apmales visās pusēs.</p><br>
+    <p class="divi">Man ir zila apakšējā apmale.</p><br>
+    <p class="tris">Man ir zaļa kreisā apmale un zaļš fons.</p><br>
+    <p class="cetri">Man ir noapaļotas apmales oranžā krāsā no visām pusēm.</p><br>
+    
+    <p></p><br><br>
+
+    <h2>CSS apmaļu stils</h2><br>
+
+    <p><span style="color: red;"><b>border-style</b></span> rekvizīts pievieno apmalēm stilu:</p><br>
+
+    <p style="background-color: #95eb49; width:330px;">Apmalēm stilu var iestatīt ar šādām vērtībām:</p><br>
+
+    <ul>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>dotted</b></span> - iestata punktētu apmali;</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>solid</b></span> - iestata vienkāršu līniju apmalei;</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>dashed</b></span> - definē pārtrauktu apmali;</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>double</b></span> - iestata dubulto apmali;</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>ridge</b></span> - definē 3D izciļņu apmali. (Efekts ir atkarīgs no apmales krāsas vērtības);</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>groove</b></span> - definē 3D rievotu apmali. (Efekts ir atkarīgs no apmales krāsas vērtības);</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>outset</b></span> - definē 3D sākuma apmali. (Efekts ir atkarīgs no apmales krāsas vērtības);</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>inset</b></span> - definē 3D ielaiduma apmali. (Efekts ir atkarīgs no apmales krāsas vērtības);</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>hidden</b></span> - definē slēpto apmali;</p></li>
+      <li><p>&nbsp;&nbsp;&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #70b831;"><b>none</b></span> - nenosaka robezu apmales.</p></li>
+    </ul><br>
+
+    <p><span style="color: red;"><b>border-style</b></span> rekvizītam var būt četras vērtības (augšējā apmale, labā apmale, apakšējā apmale, kreisā apmale).</p><br>
+
+<div class="example-container">
+    <h2>Piemērs</h2><br>
+    <p>Dažādu apmaļu stili:</p><br>
+    <div class="example-box">
+      <span style="color:brown">p.dotted&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> dotted;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.solid&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> solid;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.dashed&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> dashed;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.double&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> double;</span>
+      <span style="color:brown">}</span><br>
+      
+      <span style="color:brown">p.ridge&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> ridge;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.groove&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> groove;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.outset&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> outset;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.inset&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> inset;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.hidden&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> hidden;</span>
+      <span style="color:brown">}</span><br>
+
+      <span style="color:brown">p.none&nbsp; {</span>
+      <span style="color:#ff0000">border-style:</span><span style="color:#0011d0"> none;</span>
+      <span style="color:brown">}</span><br>
+                  
+      <!-- Ievietojam šeit jebkādu kodu, kuru vēlamies parādīt kā piemēru -->
+    </div>
+    <button class="button" id="tryItButton">Izmēģināt  &Gt;</button>
+  </div><br><br>
+
+  <p class="linija"></p><br>
+
+<p style="color: #ccc; font-size: 14px;"><b>Izmantotie avoti:</b><br><br>
+  Tika izmantotas savas zināšanas un no tālāk norādītajām vietnēm tika izmantota informācija, kur tika pārveidots teksts ar saviem vārdiem un paplašināts ar savu viedokli:<br><br>
+  MDN Web Docs (https://developer.mozilla.org),<br>
+  Uzdevumi.lv (https://www.uzdevumi.lv),<br>
+  HTML.com (https://html.com),<br>
+  Codecademy (https://www.codecademy.com),<br>
+  web.dev (https://web.dev),<br>
+  Tutorialspoint (https://www.tutorialspoint.com),<br>
+  W3Schools.com (https://www.w3schools.com),<br>
+  GeeksforGeeks (https://www.geeksforgeeks.org),<br>
+  Programiz (https://www.programiz.com),<br>
+  W3C (https://www.w3.org),<br>
+  CSS-Tricks (https://css-tricks.com),<br>
+  Javatpoint (https://www.javatpoint.com),
+  un tā tālāk.</p><br>
+
+  <p style="color: #ccc; font-size: 14px;">Ja rodas jautājumi, tad rakstiet uz e-pastu: santa.iriste.sr@gmail.com</p>
+
+</div>
+
+<script>
+function pogas() {
+  var x = document.getElementById("manaNavigacija");
+  if (x.className === "navigacija") {
+    x.className += "responsive";
+  } else {
+    x.className = "navigacija";
+  }
+}
+
+  function goToTryItYourselfPage() {
+    window.location.href = 'izmeginat_css_apmales.html';
+  }
+
+  const tryItButton = document.getElementById('tryItButton');
+  tryItButton.addEventListener('click', goToTryItYourselfPage);
+
+</script>
+</body>
+</html>
